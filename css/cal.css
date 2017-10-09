@@ -1,0 +1,14 @@
+table{
+	border-spacing: 0;
+}
+td.today{
+  background-color: #FFFF00;
+}
+td.d1{
+  background-color: #FFFF00;
+}
+td.month{
+  color: #404040;
+  font-size: 300;
+  text-align: center;
+}

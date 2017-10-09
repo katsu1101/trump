@@ -1,17 +1,25 @@
 /**
  * カード（複数）
- * @param id
+ * @param PIXI PIXI
  * @constructor
  */
-var TrumpCards = function(id){
-    this._trumpCards = $('<div>').text(id).attr('id', id);
+var TrumpCards = function (PIXI) {
+    this._PIXI = PIXI;
+    this._trumpCards = [];
+    for (var i = 1; i < 53; i++) {
+        this._trumpCards[i] = new TrumpCard(PIXI, i);
+    }
+    // $('<div style="background-color: red;">').text(id).attr('id', id);
 };
-(function(){
+(function () {
     /**
      * カード（複数）を表示
      * @param trumpTable 場
      */
-    TrumpCards.prototype.show = function(trumpTable){
-        trumpTable.append(this._trumpCards);
+    TrumpCards.prototype.show = function (trumpTable) {
+        //trumpTable.append(this._trumpCards);
+        for (var i = 1; i < 53; i++) {
+            this._trumpCards[i].show(trumpTable);
+        }
     };
 }());

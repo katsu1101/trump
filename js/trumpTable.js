@@ -1,19 +1,19 @@
 /**
  * 場
- * @param id string
+ * @param PIXI PIXI
  * @constructor
  */
-var TrumpTable = function(id){
+var TrumpTable = function (PIXI) {
     // コンスタラクタ
     // ⇒グローバル変数で定義する。
     //
-    this._trumpTabel = $('<div>').text(id).attr('id', id);
-    this._cards = new TrumpCards('hoge');
+    this._PIXI = PIXI;
+    this._cards = new TrumpCards(PIXI);
     // このタイミングでは未定義のメソッド、も指定可能。
     // ⇒「this」は実行時解決されるから。
     // this.itsLoadedStr = this.load();
 };
-(function(){
+(function () {
     //
     // 続いて、prototypeを用いてメソッドを定義
     // ⇒即時関数の中で行うことで、静的praivate変数／メソッドを実装可能。
@@ -34,9 +34,8 @@ var TrumpTable = function(id){
     /**
      * 場を表示
      */
-    TrumpTable.prototype.show = function(){
-        $('body').append(this._trumpTabel);
-        this._cards.show(this._trumpTabel);
+    TrumpTable.prototype.show = function () {
+        this._cards.show();
     };
     // CookieBind.prototype.load = function(){
     //     return $.cookie( this._cookieName );

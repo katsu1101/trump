@@ -1,0 +1,186 @@
+
+body {
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+td {
+    text-align: center;
+    border: 1px solid gray;
+}
+
+td.Space {
+    height: 600px;
+    width: 800px;
+    background-color: #FFFFFF;
+}
+
+table.Opp {
+    height: 200px;
+    vertical-align: top;
+}
+
+table.Area {
+    height: 300px;
+    vertical-align: top;
+}
+
+table.Player {
+    height: 100px;
+    vertical-align: top;
+}
+
+td.Opp1 {
+    width: 100px;
+    text-align: left;
+    vertical-align: top;
+    color: #FFFFFF;
+    font-size: 24px;
+    text-shadow: 1px 1px 3px #000;
+    background: #E0FFE0 url("../img/ami.png") no-repeat -50px -50px;
+    background-size: auto 400px;
+    border: 3px;
+}
+
+td.Opp2 {
+    width: 100px;
+    background: #FFE0E0 url("../img/mami.png") no-repeat -50px -50px;
+    background-size: auto 400px;
+    text-align: left;
+    vertical-align: top;
+    color: #FFFFFF;
+    font-size: 24px;
+    text-shadow: 1px 1px 3px #000;
+    border: 3px;
+}
+
+td.Opp3 {
+    width: 100px;
+    background: #FFFFE0 url("../img/nc2381.gif") no-repeat;
+    background-size: auto 150px;
+    text-align: left;
+    vertical-align: top;
+    border: 3px;
+}
+
+td.Talon {
+    width: 40px;
+}
+
+td.Area {
+    width: 220px;
+}
+
+td.Discard {
+    width: 40px;
+}
+
+td.Player {
+    border: 3px;
+}
+
+.card {
+    font-size: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    border: 1px solid gray;
+    position: absolute;
+    min-width: 36px;
+    min-height: 60px;
+    max-width: 36px;
+    max-height: 60px;
+    background: #ffcccc;
+    text-align: center;
+}
+
+.cardN {
+    background-color: #cc9999;
+    color: #cc9999;
+}
+
+.cardJ {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.cardB {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.cardR {
+    background-color: #FFFFFF;
+    color: red;
+}
+
+.cardS {
+    background-color: #ee9999;
+    color: #cc9999;
+}
+
+.Opp_name {
+    color: #FFFFFF;
+    font-size: 24px;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.Opp_pass {
+    text-align: right;
+    vertical-align: top;
+}
+
+.Opp_msg {
+    font-size: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    position: relative;
+    left: 190px;
+    top: -20px;
+    max-width: 100px;
+    visibility: hidden;
+    z-index: 100;
+}
+
+.Opp_count {
+    position: relative;
+    color: #FF0000;
+    left: 10px;
+    top: 30px;
+    font-size: 24px;
+    text-shadow: 1px 1px 3px #000;
+    z-index: 100;
+}
+
+.Pass {
+    background-color: #FFFFFF;
+    border: 2px ridge red;
+    max-width: 50px;
+}
+
+.pass {
+    font-size: 12px;
+    color: red;
+    background-color: #FFFFFF;
+    border: 1px ridge red;
+    max-width: 30px;
+}
+
+.Area_msg {
+    background-color: #FFFFFF;
+    position: relative;
+    left: 72px;
+    max-width: 400px;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+h1 {
+    background-color: #FFE0E0;
+    font-size: 72px;
+}
