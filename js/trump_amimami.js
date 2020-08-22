@@ -3,24 +3,19 @@
 // ToDo: タイトル画面
 // ToDo: キャラ選択＆キャラ入れ替え
 
-FPS = 60;// フレームレート
-if ((navigator.userAgent.indexOf('iPhone') > 0
-        && navigator.userAgent.indexOf('iPad') === -1)
-    || navigator.userAgent.indexOf('iPod') > 0
-    || navigator.userAgent.indexOf('Android') > 0) {
-    FPS = 20;
-}
+const FPS = 60;// フレームレート
 
-CARD_MAX_COUNT = 52; // トランプセットの合計枚数
-PASS_MAX = 3;
 
-var Scene = {
+const CARD_MAX_COUNT = 52; // トランプセットの合計枚数
+const PASS_MAX = 3;
+
+let Scene = {
     op: 1,
     menu: 2,
     game: 3
 };
 
-var Turn = {
+let Turn = {
     hello: 1,
     T2P: 2,
     start: 3,
@@ -28,8 +23,8 @@ var Turn = {
     reset: 5
 };
 
-var T, A, O1, O2, P, O;
-var clear_count ,pass_count;
+let T, A, O1, O2, P, O;
+let clear_count ,pass_count;
 
 $(document).ready(function () {
 
@@ -37,9 +32,9 @@ $(document).ready(function () {
     const WAIT_A = FPS / 3;
     const WAIT_F = FPS / 2;
 
-    var F = 0;// フレーム番号
-    var wait = 5;
-    var wait2 = 0;
+    let F = 0;// フレーム番号
+    let wait = 5;
+    let wait2 = 0;
 
     // 直ぐに処理を始めるとtdの幅などが取れない事があったため
     $(this).delay(10).queue(function () {
@@ -51,9 +46,9 @@ $(document).ready(function () {
         O2 = new Cards('Opp2', 0, 'mami', A);
         P = new Cards('Player', 0, '', A);
 
-        var scene = Scene.op;
-        var turn;
-        var activeP = 0;
+        let scene = Scene.op;
+        let turn;
+        let activeP = 0;
         $(window).resize(function () {
             A.refresh();
             O1.refresh();
@@ -105,8 +100,7 @@ $(document).ready(function () {
                     if (activeP === 1) {
                         // 山から敵１へ
                         if (T.count() > 0) {
-                            var card = T.deal(-1);
-                            O1.add(card, 1);
+                            O1.add(T.deal(-1), 1);
                             wait = WAIT_T;
                             activeP = 2;
                         } else {
@@ -119,8 +113,7 @@ $(document).ready(function () {
 
                         // 山から敵２へ
                         if (T.count() > 0) {
-                            card = T.deal(-1);
-                            O2.add(card, 1);
+                            O2.add(T.deal(-1), 1);
                             wait = WAIT_T;
                             activeP = 3;
                         } else {
@@ -132,8 +125,7 @@ $(document).ready(function () {
 
                         // 山からプレイヤーへ
                         if (T.count() > 0) {
-                            card = T.deal(-1);
-                            P.add(card, 0);
+                            P.add(T.deal(-1), 0);
                             wait = WAIT_T;
                             activeP = 1;
                         } else {
@@ -144,10 +136,10 @@ $(document).ready(function () {
                 } else if (turn === Turn.start) {
 
                     // 手札の７を場へ
-                    for (var i = O1.count() - 1; i >= 0; i--) {
-                        card = O1.getCard(i);
-                        if (card.num === 7) {
-                            card = O1.deal(i);
+                    for (let i = O1.count() - 1; i >= 0; i--) {
+
+                        if (O1.getCard(i).num === 7) {
+                            let card = O1.deal(i);
                             A.add(card, 0);
                             if (card.mark === 1) {
                                 activeP = 1;
@@ -155,10 +147,10 @@ $(document).ready(function () {
                             }
                         }
                     }
-                    for (i = O2.count() - 1; i >= 0; i--) {
-                        card = O2.getCard(i);
-                        if (card.num === 7) {
-                            card = O2.deal(i);
+                    for (let i = O2.count() - 1; i >= 0; i--) {
+
+                        if (O2.getCard(i).num === 7) {
+                            let card = O2.deal(i);
                             A.add(card, 0);
                             if (card.mark === 1) {
                                 activeP = 2;
@@ -166,10 +158,9 @@ $(document).ready(function () {
                             }
                         }
                     }
-                    for (i = P.count() - 1; i >= 0; i--) {
-                        card = P.getCard(i);
-                        if (card.num === 7) {
-                            card = P.deal(i);
+                    for (let i = P.count() - 1; i >= 0; i--) {
+                        if (P.getCard(i).num === 7) {
+                            let card = P.deal(i);
                             A.add(card, 0);
                             if (card.mark === 1) {
                                 activeP = 4;
@@ -197,9 +188,9 @@ $(document).ready(function () {
                         // 敵のターン
                         if (O.count() > 0) {
                             O.setTurn(true);
-                            var n = O.selectCard(A);
+                            let n = O.selectCard(A);
                             if (n > -1) {
-                                card = O.deal(n);
+                                let card = O.deal(n);
                                 O.refresh();
                                 A.add(card, 0);
                                 if (O.count() === 0) {
@@ -283,8 +274,7 @@ $(document).ready(function () {
                                 }
                             } else if (P.getSelect() > -1) {
 
-                                card = P.deal(P.getSelect());
-                                A.add(card, 0);
+                                A.add(P.deal(P.getSelect()), 0);
                                 P.select(-1);
                                 if (P.count() === 0) {
                                     if (clear_count === 0) {
@@ -316,8 +306,7 @@ $(document).ready(function () {
                     }
                 } else if (turn === Turn.reset) {
                     if (A.count() > 0) {
-                        card = A.deal(-1);
-                        T.add(card, 1);
+                        T.add(A.deal(-1), 1);
                         wait = WAIT_T;
                     } else {
                         turn = Turn.hello;

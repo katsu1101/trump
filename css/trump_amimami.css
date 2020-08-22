@@ -15,28 +15,32 @@ td {
 }
 
 td.Space {
-    height: 600px;
-    width: 800px;
+    height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
     background-color: #FFFFFF;
 }
 
 table.Opp {
-    height: 200px;
+    height: 30vh;
+    max-height: 30vh;
     vertical-align: top;
 }
 
 table.Area {
-    height: 300px;
+    height: 50vh;
+    max-height: 50vh;
     vertical-align: top;
 }
 
 table.Player {
-    height: 100px;
+    height: 20vh;
+    max-height: 20vh;
     vertical-align: top;
 }
 
 td.Opp1 {
-    width: 100px;
+    width: 50vw;
     text-align: left;
     vertical-align: top;
     color: #FFFFFF;
@@ -48,7 +52,7 @@ td.Opp1 {
 }
 
 td.Opp2 {
-    width: 100px;
+    width: 50vw;
     background: #FFE0E0 url("../img/mami.png") no-repeat -50px -50px;
     background-size: auto 400px;
     text-align: left;
@@ -60,7 +64,7 @@ td.Opp2 {
 }
 
 td.Opp3 {
-    width: 100px;
+    width: 20vw;
     background: #FFFFE0 url("../img/nc2381.gif") no-repeat;
     background-size: auto 150px;
     text-align: left;
@@ -69,15 +73,15 @@ td.Opp3 {
 }
 
 td.Talon {
-    width: 40px;
+    width: 10vw;
 }
 
 td.Area {
-    width: 220px;
+    width: 80vw;
 }
 
 td.Discard {
-    width: 40px;
+    width: 10vw;
 }
 
 td.Player {
@@ -132,19 +136,21 @@ td.Player {
 .Opp_pass {
     text-align: right;
     vertical-align: top;
+    float: left;
 }
 
 .Opp_msg {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 24px;
+    line-height: 24px;
     overflow: hidden;
     background-color: #FFFFFF;
     position: relative;
     left: 190px;
     top: -20px;
-    max-width: 100px;
+    max-width: 200px;
     visibility: hidden;
     z-index: 100;
+    text-align: center;
 }
 
 .Opp_count {
@@ -155,16 +161,18 @@ td.Player {
     font-size: 24px;
     text-shadow: 1px 1px 3px #000;
     z-index: 100;
+    float: left;
 }
 
 .Pass {
     background-color: #FFFFFF;
     border: 2px ridge red;
     max-width: 50px;
+    float: left;
 }
 
 .pass {
-    font-size: 12px;
+    font-size: 10px;
     color: red;
     background-color: #FFFFFF;
     border: 1px ridge red;
@@ -174,10 +182,11 @@ td.Player {
 .Area_msg {
     background-color: #FFFFFF;
     position: relative;
-    left: 72px;
+    /*left: 72px;*/
     max-width: 400px;
     visibility: hidden;
     z-index: 1000;
+    margin: auto;
 }
 
 h1 {
