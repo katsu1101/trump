@@ -4,8 +4,9 @@ body {
 }
 
 table {
-    width: 100%;
-    margin: 0;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
 }
 
@@ -15,21 +16,21 @@ td {
 }
 
 td.Space {
-    height: 100vh;
+    height: 95vh;
     max-height: 100vh;
-    width: 100vw;
+    /*width: 100vw;*/
     background-color: #FFFFFF;
 }
 
 table.Opp {
-    height: 30vh;
-    max-height: 30vh;
+    height: 28vh;
+    max-height: 28vh;
     vertical-align: top;
 }
 
 table.Area {
-    height: 50vh;
-    max-height: 50vh;
+    height: 48vh;
+    max-height: 48vh;
     vertical-align: top;
 }
 
@@ -40,21 +41,21 @@ table.Player {
 }
 
 td.Opp1 {
-    width: 50vw;
+    width: 50%;
     text-align: left;
     vertical-align: top;
     color: #FFFFFF;
     font-size: 24px;
     text-shadow: 1px 1px 3px #000;
-    background: #E0FFE0 url("../img/ami.png") no-repeat -50px -50px;
-    background-size: auto 400px;
+    background: #E0FFE0 url("../img/ami.png") no-repeat 0 -50px;
+    background-size: auto 250px;
     border: 3px;
 }
 
 td.Opp2 {
-    width: 50vw;
-    background: #FFE0E0 url("../img/mami.png") no-repeat -50px -50px;
-    background-size: auto 400px;
+    width: 50%;
+    background: #FFE0E0 url("../img/mami.png") no-repeat 0 -50px;
+    background-size: auto 250px;
     text-align: left;
     vertical-align: top;
     color: #FFFFFF;
@@ -64,7 +65,7 @@ td.Opp2 {
 }
 
 td.Opp3 {
-    width: 20vw;
+    width: 20%;
     background: #FFFFE0 url("../img/nc2381.gif") no-repeat;
     background-size: auto 150px;
     text-align: left;
@@ -73,15 +74,15 @@ td.Opp3 {
 }
 
 td.Talon {
-    width: 10vw;
+    width: 10%;
 }
 
 td.Area {
-    width: 80vw;
+    width: 80%;
 }
 
 td.Discard {
-    width: 10vw;
+    width: 10%;
 }
 
 td.Player {
@@ -145,19 +146,20 @@ td.Player {
     overflow: hidden;
     background-color: #FFFFFF;
     position: relative;
-    left: 190px;
+    left: 150px;
     top: -20px;
     max-width: 200px;
     visibility: hidden;
     z-index: 100;
     text-align: center;
+    opacity: 0.9;
 }
 
 .Opp_count {
     position: relative;
     color: #FF0000;
-    left: 10px;
-    top: 30px;
+    left: 0;
+    top: 0;
     font-size: 24px;
     text-shadow: 1px 1px 3px #000;
     z-index: 100;
@@ -187,6 +189,7 @@ td.Player {
     visibility: hidden;
     z-index: 1000;
     margin: auto;
+    opacity: 0.5;
 }
 
 h1 {
